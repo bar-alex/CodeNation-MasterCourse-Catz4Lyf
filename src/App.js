@@ -2,9 +2,9 @@
 import './App.css';
 
 import styled from 'styled-components';
-import DisplayList from './DisplayList'
-import DisplayHeader from './DisplayHeader'
-import DisplayFooter from './DisplayFooter'
+import DisplayList from './DisplayList';
+import DisplayHeader from './DisplayHeader';
+import DisplayFooter from './DisplayFooter';
 import BasketList from './BasketList';
 //import CardSmall from './CardSmall';
 //import CardLarge from './CardLarge';
@@ -14,6 +14,7 @@ function App() {
 
 
   return (
+
     <divApp className="App">
       <header className="App-header">
         <p>
@@ -36,6 +37,7 @@ function App() {
 }
 
 export default App;
+
 
 
 const divApp = styled.div`

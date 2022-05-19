@@ -96,39 +96,5 @@ const DivStyled = styled.div`
         padding: 0px 3px;
         border: 1px solid purple;
     }
-
-
-
-/* border: 2px solid grey;
-width: 50vh;
-height: 75vh;
-margin: 20px;
-background-color: #61dafb;
-border-radius: 10px; */
-/* box-shadow: 2.5px 5px #000000; */
-
- & p1 {
-    border: 3px solid grey;
-     padding: 0rem;
-     border: 1px solid grey;
-     margin: 20px;
     
-     
- }
-& h2 {
-    margin: 0rem;
-    border: 1px solid grey;
-
- 
-}
-
-
-/* & img {
-    padding: 5px;
-    width: 18rem;
-    margin: 2rem;
-    border-radius: 20px;
-    border: 1px solid grey;
-} */
-
 `
