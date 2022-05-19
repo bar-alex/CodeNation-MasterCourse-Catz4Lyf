@@ -64,7 +64,7 @@ export default DisplayHeader
 
 
 const DivStyled = styled.div`
-    width: 100%;
+    /* width: 100%; */
     margin: 0px 10px;
 
     display: flex;
@@ -72,5 +72,5 @@ const DivStyled = styled.div`
     justify-content: space-between;
     align-items: flex-start;
 
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 `
