@@ -18,7 +18,6 @@ const CardLarge = (props) => {
 
 export default CardLarge
 
-
 const DivStyled = styled.div`
 
 border: 2px solid grey;
@@ -34,17 +33,11 @@ box-shadow: 2.5px 5px #000000;
      padding: 0rem;
      border: 1px solid grey;
      margin: 20px;
-    
-     
  }
 & h2 {
     margin: 0rem;
     border: 1px solid grey;
-
- 
 }
-
-
 & img {
     padding: 5px;
     width: 18rem;
