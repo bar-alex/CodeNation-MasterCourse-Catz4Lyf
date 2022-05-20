@@ -19,13 +19,14 @@ const BasketList = (props) => {
     return (
         <DivStyled>
             <FaShoppingBasket />
+            <div style={basketCatsStyle}>
             { 
             basketCats && 
             basketCats.map( (cat,idx) => 
                 <CardSmall  />
              )
             }
-
+            </div>
 
         </DivStyled>
     )
@@ -133,6 +134,11 @@ const totalItems = {
     backgroundColor: "black",
     color: "white",
     height: "9.7vh"
+}
+
+const basketCatsStyle = {
+    height: "400px",
+    backgroundColor: "red"
 }
 
 export default BasketList
