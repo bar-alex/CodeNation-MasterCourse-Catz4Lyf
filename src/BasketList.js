@@ -12,7 +12,10 @@ const BasketList = (props) => {
     // props.setBasketList
     // props.removeThisCat
     
-    const calcTotal = () => props.basketList.reduce( (pv,cv) => pv+cv, 0 );
+    const calcTotal = () => props.basketList
+        .map(it => it.price)
+        .reduce( (pv,cv) => pv+cv, 0 );
+    console.log( calcTotal() );
 
     return (
         <DivStyled>

@@ -34,7 +34,12 @@ function App() {
 
   // will remove the cat passed as param from the bastekCats list 
   const removeThisCat = (catInfo) => {
+    
+    const newBasketList = basketCats
+        .filter( (it,idx) => it.id !== catInfo.id )
+        .map( (it,idx) => { return {...it} } );
 
+    setBasketCats( newBasketList );
   }
 
 

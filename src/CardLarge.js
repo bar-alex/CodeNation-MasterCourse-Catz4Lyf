@@ -35,6 +35,7 @@ const DivStyled = styled.div`
     flex-grow: 0;
 
     border: 1px solid blue;
+    padding-bottom: 10px;
 
     background-color: #61dafb;
     border-radius: 8px;
@@ -64,6 +65,7 @@ const DivStyled = styled.div`
     & > p {
         align-self: flex-start;
         text-align: start;
+        flex-grow:1;
         /* text-align: center; */
         padding: 0px 3px 0px 5px;
         /* border: 1px solid orange; */
@@ -93,14 +95,12 @@ const DivStyled = styled.div`
         font-weight: 500;
     }
 
-    & button {
-        padding: 10px 2px;
+    & > div > button {
+        padding: 2px 2px;
         border: 2px solid purple;
-        border-radius: 20px;
-        margin-left: 20px;
-    
- 
-
+        border-radius: 8px;
+        /* margin-left: 20px; */
+        margin-right: 7px;
     }
     
 `

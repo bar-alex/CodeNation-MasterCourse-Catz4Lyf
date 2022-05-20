@@ -16,7 +16,7 @@ const DisplayHeader = (props) => {
             </div>
             <div>
                 <input className= "search-bar" placeholder="Search..."></input>
-                <button className = "search-button" style={searchButton}><FaSearch /></button>
+                <button className = "search-button" style={searchButton} ><FaSearch /></button>
             </div>
         </DivStyled>
     )
