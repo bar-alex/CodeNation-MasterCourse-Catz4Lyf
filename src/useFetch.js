@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const useFetch = (url) => {
+const useFetch = (url, initObj = null) => {
     // the data that will be returned
     const [data, setData] = useState(null);
     // if its still downloading
@@ -16,8 +16,9 @@ const useFetch = (url) => {
         const fetchData = async (url) => {
             // there might be errors, so we try / catch this
             try{
+                console.log(`-> useFetch: fetching ${url} \n-> with ${initObj}`);
                 // fetch from the url, might take some time so we wait for it
-                const result = await fetch(url);
+                const result = await fetch(url, initObj);
                 // test of the received data is json
                 const isJson = result.headers.get('content-type')?.includes('application/json');
                 // if the data is json, it will convert it into javascript object, otherwise the object will have null
@@ -46,7 +47,7 @@ const useFetch = (url) => {
         }
         // we call the function
         fetchData(url);
-    },[url])
+    },[url,initObj])
 
     // we return these three pieces of information
     return { data, isPending, error }
