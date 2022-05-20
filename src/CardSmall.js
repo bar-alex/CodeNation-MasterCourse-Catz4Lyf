@@ -42,7 +42,6 @@ const DivStyled = styled.div`
         border-radius: 6px;
         display: flex;
         margin-top: 1rem;
-    
 
     }
     & h2 { 
@@ -51,7 +50,6 @@ const DivStyled = styled.div`
         position: absolute;
         top: 1rem;
         left: 18rem;    
-        
     }
 
     & p {
@@ -62,7 +60,4 @@ const DivStyled = styled.div`
         left: 16rem;
         width: 19rem;
         height: 5rem;
-
-
-        
     }`

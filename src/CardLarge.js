@@ -20,7 +20,6 @@ const CardLarge = (props) => {
 
 export default CardLarge
 
-
 const DivStyled = styled.div`
     width : 250px;
     height: 300px;

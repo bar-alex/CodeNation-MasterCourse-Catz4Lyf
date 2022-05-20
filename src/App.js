@@ -1,6 +1,5 @@
 
 import './App.css';
-
 import styled from 'styled-components';
 import DisplayList from './DisplayList';
 import DisplayHeader from './DisplayHeader';
@@ -17,9 +16,7 @@ function App() {
 
     <DivApp className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+      
       </header>
 
       <DisplayHeader />
