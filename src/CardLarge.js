@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 const CardLarge = (props) => {
 
+    // props.catInfo
+    // props.buyAction
 
     return (
         <DivStyled>
@@ -30,6 +32,7 @@ const DivStyled = styled.div`
     /* flex-flow: column wrap; */
     justify-content: space-between;
     align-items: flex-start;
+    flex-grow: 0;
 
     border: 1px solid blue;
 
@@ -40,7 +43,6 @@ const DivStyled = styled.div`
     width: 45vh;
     height: 45vh;
     margin: 0px auto 20px;
-
 
     & > img{
         width: 240px;

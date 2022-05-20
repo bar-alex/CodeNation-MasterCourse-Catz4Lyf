@@ -26,16 +26,15 @@ export default DisplayHeader
 
 
 const DivStyled = styled.div`
-height: 100px;
-width: 100%;
-background-color: darkblue;
-color: lightblue;
-display: flex;
-justify-content: space-between;
-align-items: center;
-font-size: 24px;
-margin: 20px 0 20px 0;
-
+    height: 100px;
+    width: 100%;
+    background-color: darkblue;
+    color: lightblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    margin: 20px 0 20px 0;
 `
 
 const navbarLinks = {

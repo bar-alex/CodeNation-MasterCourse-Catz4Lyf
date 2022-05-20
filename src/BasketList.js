@@ -8,24 +8,29 @@ const BasketList = (props) => {
 
     console.log('BasketList->props:', props );
 
-    const basketCats = props.catList
-
-    let number = 0
-    const handleClick = () =>{
-        number++
-        console.log(number)
-    }
+    // props.basketList
+    // props.setBasketList
+    // props.removeThisCat
     
+    const calcTotal = () => props.basketList.reduce( (pv,cv) => pv+cv, 0 );
+
     return (
         <DivStyled>
-            <FaShoppingBasket />
-            <div style={basketCatsStyle}>
-            { 
-            basketCats && 
-            basketCats.map( (cat,idx) => 
-                <CardSmall  />
-             )
+            <div id='basket-header'> <FaShoppingBasket /> </div>
+            <div id='basket-body'>
+            { props.basketList.length===0 && 
+                <div id='empty-basket'>There are no cats in here .. </div>  
             }
+            {   props.basketList && 
+                props.basketList.map( (cat,idx) => 
+                    <CardSmall key={idx} 
+                        catInfo = {cat}  
+                        removeAction = {props.removeThisCat}
+                        /> )
+            }
+            </div>
+            <div id='basket-price'>
+                <p>Price { calcTotal() }</p>
             </div>
 
         </DivStyled>
@@ -39,12 +44,47 @@ const DivStyled = styled.div`
     width: 45vh;
     //float: right;
     /* display:flex; */ // Lets basket fill up - removed luka
+    margin: 0px 10px;
 
-    & > svg {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: wrap;
+    position:relative;
+
+    #basket-header {
+        height: 5.2rem;
+        flex-grow: 0;
+        align-self:flex-start;
+        /* display: flex; */
+        /* justify-content: center; */
+        /* text-align:center; */
+    }
+    #basket-header > svg {
         border: 1px solid red;
         width: 5rem;
         height: 5rem;
+        /* margin: auto; */
+        /* text-align:center; */
+    }
+    #basket-price {
+        align-self: flex-end;
+        flex-grow: 0;
+        text-align: center;
+    }
+    #basket-body{
+        flex-grow:2;
+    }
 
+
+    #empty-basket{
+        justify-self:center !important;
+        align-self:center !important;
+        margin: 50% 0;
+        width: 100%;
+        text-align: center;
+        position:absolute;
+        border: 1px solid lightblue;
     }
 
 `

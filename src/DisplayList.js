@@ -2,39 +2,27 @@
 
 import styled from 'styled-components';
 import { apiUrls } from './apiData'
-import { useEffect, useState } from 'react';
+import { useEffect  } from 'react';
 import useFetch from './useFetch'
 import makeCatInfoObject from './makeCatInfoObject';
 import CardLarge from './CardLarge'
-import BasketList from './BasketList'
+//import BasketList from './BasketList'
 
 
 
-const DisplayHeader = (props) => {
+const DisplayList = (props) => {
 
+    console.log( 'DisplayList.props', props );
+
+    // the api is used here to populate the list with the cats
     const apiURL = apiUrls.search_10
     //console.log(apiURL);    // , apiInitObj
     
-    // this holds the list of cats that are available to purchase
-    const [ dataCats, setDataCats ] = useState( [] );
-    // this holds the list of cats that are in the process of being purchased
-    const [ basketCats, setBasketCats ] = useState( [] );
     // get some cats from the website
     const { data:dataAPI, isPending, error:errorAPI } = useFetch( apiURL )     // , apiInitObj;
-    
 
-
-    
-    // will copy this cat's information to basketCats
-    // must receive a catInfo object (copied from dataCats)
-    const buyThisCat = (catInfo) => {
-        // will hold the list for the new basket
-        const newBasketList = [...basketCats, catInfo]
-        setBasketCats( newBasketList )
-
-        console.log('buyThisCat -> new cat', catInfo, ' \n new list -> ',newBasketList);
-    }
-
+    // shortcut, fixes some bug where it triggers continuos api calls
+    const setCatList = props.setCatList;
 
     // for each cat add some extra properties so we have a nice set of cats with all the needed properties
     useEffect( ()=>{
@@ -46,31 +34,31 @@ const DisplayHeader = (props) => {
         //console.log('dataAPI',dataAPI,errorAPI);
         const newCatList = dataAPI.map( (it,idx) => makeCatInfoObject(it) );
         // set the new lits to the state variable
-        setDataCats( [...newCatList] )
+        setCatList( [...newCatList] )
 
-    } ,[dataAPI,errorAPI,isPending])
+    }, [dataAPI,errorAPI,isPending,setCatList])
 
     // console.log( data, error );
 
     return (
         <DivStyled>
+
             { isPending && <p>pending ...</p> }
             { errorAPI && <p>Error: {errorAPI}</p> }
-            {   dataCats &&
-                dataCats.map( (it,idx) => 
+            {   props.catList &&
+                props.catList.map( (it,idx) => 
                     <CardLarge key={idx} 
-                        catInfo={it}  
-                        buyAction={buyThisCat}
+                        catInfo = {it}  
+                        buyAction = {props.buyThisCat}
                         /> )
                     
             }
 
-            <BasketList catList = {basketCats}/>
         </DivStyled>
     )
 }
 
-export default DisplayHeader
+export default DisplayList
 
 
 const DivStyled = styled.div`
@@ -78,9 +66,13 @@ const DivStyled = styled.div`
     margin: 0px 10px;
 
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: flex-start; */
+    /* justify-content:space-around; */
+    /* justify-items: flex-start; */
+    /* align-items: flex-start; */
+    /* flex-basis: 300px; */
 
     /* border: 1px solid purple; */
 `
