@@ -22,6 +22,8 @@ const DisplayHeader = (props) => {
     // get some cats from the website
     const { data:dataAPI, isPending, error:errorAPI } = useFetch( apiURL )     // , apiInitObj;
     
+
+
     
     // will copy this cat's information to basketCats
     // must receive a catInfo object (copied from dataCats)
@@ -60,6 +62,7 @@ const DisplayHeader = (props) => {
                         catInfo={it}  
                         buyAction={buyThisCat}
                         /> )
+                    
             }
 
             <BasketList catList = {basketCats}/>

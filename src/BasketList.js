@@ -37,7 +37,7 @@ const DivStyled = styled.div`
     height: 100vh;
     width: 45vh;
     //float: right;
-    display:flex;
+    /* display:flex; */ // Lets basket fill up - removed luka
 
     & > svg {
         border: 1px solid red;

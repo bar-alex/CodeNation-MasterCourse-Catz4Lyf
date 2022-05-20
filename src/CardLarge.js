@@ -7,12 +7,12 @@ const CardLarge = (props) => {
     return (
         <DivStyled>
             <img src={props.catInfo.url} alt="cat's photogenic mug-shot" />
-            <h2>{props.catInfo.name} - {props.catInfo.age}yo</h2>
+            <h2>{props.catInfo.name} - {props.catInfo.age} Years Old</h2>
             <p>{props.catInfo.description}</p>
             <div>
                 <p>Price: </p>
                 <p>£{props.catInfo.price}</p>
-                <button onClick={ () => props.buyAction(props.catInfo) } >Buy me!</button>
+                <button onClick={ () => props.buyAction(props.catInfo) } >Add to cart</button>
             </div>
         </DivStyled>
     )
@@ -78,7 +78,7 @@ const DivStyled = styled.div`
         flex-grow: 0;
         /* flex-shrink: 1; */
 
-        border: 1px solid orange;
+        /* border: 1px solid orange; */
     }
 
     /* the price */
@@ -91,9 +91,14 @@ const DivStyled = styled.div`
         font-weight: 500;
     }
 
-    & > button {
-        padding: 0px 3px;
-        border: 1px solid purple;
+    & button {
+        padding: 10px 2px;
+        border: 2px solid purple;
+        border-radius: 20px;
+        margin-left: 20px;
+    
+ 
+
     }
     
 `

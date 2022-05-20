@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const CardSmall = (props) => {
     return (
         <div>
@@ -8,7 +9,7 @@ const CardSmall = (props) => {
     <h2>{props.catTitle}</h2>
     <p>{props.catDesc}</p>
     <p1>{props.catPrice}</p1>
-    <button>Remove</button>
+    <button>  Remove </button>
 </DivStyled>
 </div>
     )
@@ -53,7 +54,7 @@ const DivStyled = styled.div`
     }
 
     & p {
-        border: 1px solid orange;
+        /* border: 1px solid orange; */
         display: flex;
         position: absolute;
         top: 6rem;
