@@ -1,8 +1,14 @@
 
 import styled from "styled-components"
 import {FaShoppingBasket} from "react-icons/fa"
+import CardSmall from './CardSmall'
+
 
 const BasketList = (props) => {
+
+    console.log('BasketList->props:', props );
+
+    const basketCats = props.catList
 
     let number = 0
     const handleClick = () =>{
@@ -12,7 +18,40 @@ const BasketList = (props) => {
     
     return (
         <DivStyled>
-        <div style={shoppingBasketStyle}>
+            <FaShoppingBasket />
+            { 
+            basketCats && 
+            basketCats.map( (cat,idx) => 
+                <CardSmall  />
+             )
+            }
+
+
+        </DivStyled>
+    )
+    
+}
+
+const DivStyled = styled.div`
+    background-color: silver;
+    height: 100vh;
+    width: 45vh;
+    //float: right;
+    display:flex;
+
+    & > svg {
+        border: 1px solid red;
+        width: 5rem;
+        height: 5rem;
+
+    }
+
+`
+
+//--------------------------------------------------------
+
+/* 
+<div style={shoppingBasketStyle}>
         <FaShoppingBasket onClick = {handleClick}/>
         </div>
         <div style={basketItems}>
@@ -30,18 +69,10 @@ const BasketList = (props) => {
         </div>
         <div style={totalItems}>
             <h1 style={{margin: "0"}}>0 Items</h1>
-        </div>      
-        </DivStyled>
-    )
-    
-}
+        </div>       */
 
-const DivStyled = styled.div`
-background-color: silver;
-height: 100vh;
-width: 45vh;
-float: right
-`
+
+
 const shoppingBasketStyle = {
     backgroundColor: "black",
     color: "white",

@@ -15,7 +15,7 @@ function App() {
 
   return (
 
-    <divApp className="App">
+    <DivApp className="App">
       <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -32,7 +32,7 @@ function App() {
 
       <DisplayFooter />
 
-    </divApp>
+    </DivApp>
   );
 }
 
@@ -40,7 +40,7 @@ export default App;
 
 
 
-const divApp = styled.div`
+const DivApp = styled.div`
 
   display:flex;
   /* flex-direction: column; */

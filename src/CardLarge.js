@@ -12,7 +12,7 @@ const CardLarge = (props) => {
             <div>
                 <p>Price: </p>
                 <p>£{props.catInfo.price}</p>
-                <button>Buy me!</button>
+                <button onClick={ () => props.buyAction(props.catInfo) } >Buy me!</button>
             </div>
         </DivStyled>
     )

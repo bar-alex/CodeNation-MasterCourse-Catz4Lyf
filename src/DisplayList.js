@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import useFetch from './useFetch'
 import makeCatInfoObject from './makeCatInfoObject';
 import CardLarge from './CardLarge'
+import BasketList from './BasketList'
 
 
 
@@ -25,7 +26,11 @@ const DisplayHeader = (props) => {
     // will copy this cat's information to basketCats
     // must receive a catInfo object (copied from dataCats)
     const buyThisCat = (catInfo) => {
+        // will hold the list for the new basket
+        const newBasketList = [...basketCats, catInfo]
+        setBasketCats( newBasketList )
 
+        console.log('buyThisCat -> new cat', catInfo, ' \n new list -> ',newBasketList);
     }
 
 
@@ -56,6 +61,8 @@ const DisplayHeader = (props) => {
                         buyAction={buyThisCat}
                         /> )
             }
+
+            <BasketList catList = {basketCats}/>
         </DivStyled>
     )
 }
