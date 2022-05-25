@@ -15,7 +15,7 @@ const DisplayList = (props) => {
     console.log( 'DisplayList.props', props );
 
     // the api is used here to populate the list with the cats
-    const apiURL = apiUrls.search_10
+    const apiURL = apiUrls.search_custom+'12'
     //console.log(apiURL);    // , apiInitObj
     
     // get some cats from the website
