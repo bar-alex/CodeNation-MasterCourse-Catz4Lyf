@@ -46,6 +46,7 @@ const DivStyled = styled.div`
     background-color: lightcyan;
     min-height: 100vh;
     height: auto;
+    min-width: 45vh;
     width: 45vh;
     /* float: right; */
     /* display:flex; */ // Lets basket fill up - removed luka

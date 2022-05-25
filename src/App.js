@@ -93,18 +93,24 @@ const DivApp = styled.div`
   align-items: center;
 
   #main-area{
+    width: 100%;
     display:flex;
     flex-direction: row;
+    justify-content: flex-end;
   }
 
   #main-area > :first-child {
     /* border: 1px solid green; */
+    /* min-width: 80%; */
     width: 80%;
+    /* align-self:flex-start; */
   }
 
   #main-area > :nth-child(2) {
     border: 1px solid slategray;
+    /* min-width: 20%; */
     width: 20%;
+    /* align-self:flex-end; */
   }
 
   /* & > div {
