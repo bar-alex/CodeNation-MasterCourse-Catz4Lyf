@@ -18,9 +18,9 @@ function App() {
   // this holds the list of cats that are in the process of being purchased
   const [ basketCats, setBasketCats ] = useState( [] );
   // used to filter the cats shown in the list
-  const [ catsFilter, setCatsFilter ] = useState( '' )
+  const [ catsFilter, setCatsFilter ] = useState( '' );
 
-  const filteredCatList = (hasText) => dataCats.filter( x => !hasText || x.name.toLowerCase().indexOf(hasText) );
+  const filteredCatList = (hasText) => dataCats.filter( x => !hasText || x.name.toLowerCase().indexOf(hasText)>-1 );
 
   // will copy this cat's information to basketCats
   // must receive a catInfo object (copied from dataCats)
@@ -32,12 +32,16 @@ function App() {
     console.log('buyThisCat -> new cat', catInfo, ' \n new list -> ',newBasketList);
   }
 
-  // will remove the cat passed as param from the bastekCats list 
-  const removeThisCat = (catInfo) => {
+  // will remove the cat passed as param from the baskekCats list 
+  const removeThisCat = (catInfo,indexValue) => {
     
+    // const newBasketList = basketCats
+    //     .filter( (it,idx) => it.id !== catInfo.id )
+    //     .map( (it,idx) => { return {...it} } );
     const newBasketList = basketCats
-        .filter( (it,idx) => it.id !== catInfo.id )
-        .map( (it,idx) => { return {...it} } );
+      .filter( (it,idx) => idx !== indexValue )
+      .map( (it,idx) => { return {...it} } );
+
 
     setBasketCats( newBasketList );
   }
@@ -50,7 +54,7 @@ function App() {
       
       </header>
 
-      <DisplayHeader />
+      <DisplayHeader setCatsFilter={setCatsFilter} />
       
       <div id='main-area'>
         <DisplayList 
@@ -77,7 +81,7 @@ export default App;
 
 
 const DivApp = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   /* text-align: center; */
   background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);  
@@ -94,12 +98,12 @@ const DivApp = styled.div`
   }
 
   #main-area > :first-child {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 80%;
   }
 
   #main-area > :nth-child(2) {
-    border: 1px solid yellow;
+    border: 1px solid slategray;
     width: 20%;
   }
 

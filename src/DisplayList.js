@@ -68,7 +68,9 @@ const DivStyled = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* justify-content: flex-start; */
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-grow: 0;
     /* justify-content:space-around; */
     /* justify-items: flex-start; */
     /* align-items: flex-start; */

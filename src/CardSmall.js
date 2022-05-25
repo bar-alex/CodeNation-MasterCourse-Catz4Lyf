@@ -9,7 +9,7 @@ const CardSmall = (props) => {
                 {/* <p>{props.catInfo.description}</p> */}
                 <div>
                     <p>Price: £{props.catInfo.price}</p>
-                    <button onClick={ () => props.removeAction(props.catInfo) } >Remove</button>
+                    <button onClick={ () => props.removeAction(props.catInfo, props.indexValue) } >Remove</button>
                 </div>
             </div>
         </DivStyled>
@@ -30,21 +30,27 @@ const DivStyled = styled.div`
     align-items: flex-start;
     flex-grow: 0;
 
-    background-color: #91dadb;
-    box-shadow: 2.5px 5px #000000;
+    /* background-color: #91dadb; */
+    /* box-shadow: 2.5px 5px #000000; */
 
-    border: 3px solid grey;
-    border-width: 2px;
-    background-color: #91dadb;
+    border-bottom: 3px solid grey;
+    /* border-width: 2px; */
+    /* background-color: #91dadb; */
+    padding: 5px 2px;
     
+    
+    overflow: hidden;
+
     & > img {
         width: 45%;
-        height: auto;
+        height: 90%;
+        height: auto;        
+        /* object-fit: cover; */
         object-fit: contain;
 
         border: 1px solid purple;
         border-radius: 5px;
-        margin: 2px 4px auto 2px
+        margin: 0px 6px auto 2px
     }
 
     & :nth-child(1){

@@ -21,19 +21,20 @@ const BasketList = (props) => {
         <DivStyled>
             <div id='basket-header'> <FaShoppingBasket /> </div>
             <div id='basket-body'>
-            { props.basketList.length===0 && 
-                <div id='empty-basket'>There are no cats in here .. </div>  
-            }
-            {   props.basketList && 
-                props.basketList.map( (cat,idx) => 
-                    <CardSmall key={idx} 
-                        catInfo = {cat}  
-                        removeAction = {props.removeThisCat}
-                        /> )
-            }
+                { props.basketList.length===0 && 
+                    <div id='empty-basket'>There are no cats in here .. </div>  
+                }
+                {   props.basketList && 
+                    props.basketList.map( (cat,idx) => 
+                        <CardSmall key={idx} 
+                            indexValue = {idx}
+                            catInfo = {cat}  
+                            removeAction = {props.removeThisCat}
+                            /> )
+                }
             </div>
             <div id='basket-price'>
-                <p>Price { calcTotal() }</p>
+                <p>Price £{ calcTotal() }</p>
             </div>
 
         </DivStyled>
@@ -42,10 +43,11 @@ const BasketList = (props) => {
 }
 
 const DivStyled = styled.div`
-    background-color: silver;
-    height: 100vh;
+    background-color: lightcyan;
+    min-height: 100vh;
+    height: auto;
     width: 45vh;
-    //float: right;
+    /* float: right; */
     /* display:flex; */ // Lets basket fill up - removed luka
     margin: 0px 10px;
 
@@ -56,27 +58,45 @@ const DivStyled = styled.div`
     position:relative;
 
     #basket-header {
+        width: 100%;
+        background-color: #777;
+        color: white;
         height: 5.2rem;
         flex-grow: 0;
         align-self:flex-start;
-        /* display: flex; */
-        /* justify-content: center; */
-        /* text-align:center; */
+        display: flex;
+        justify-content: center;
+        text-align:center;
+        /* border: 1px solid blue; */
     }
     #basket-header > svg {
-        border: 1px solid red;
+        /* border: 1px solid red; */
         width: 5rem;
         height: 5rem;
         /* margin: auto; */
         /* text-align:center; */
     }
     #basket-price {
+        width: 100%;
+        background-color: #777;
+        color: white;
+        height: 4rem;
+        font-size: 2rem;
+
         align-self: flex-end;
         flex-grow: 0;
-        text-align: center;
+        
+        text-align: left;
+        padding-left: 10px;
+        
+        vertical-align: middle;
+        padding-top: 10px;
+        /* border: 1px solid red; */
+
     }
     #basket-body{
         flex-grow:2;
+        overflow: auto;
     }
 
 
@@ -87,7 +107,7 @@ const DivStyled = styled.div`
         width: 100%;
         text-align: center;
         position:absolute;
-        border: 1px solid lightblue;
+        /* border: 1px solid lightblue; */
     }
 
 `
@@ -117,71 +137,71 @@ const DivStyled = styled.div`
 
 
 
-const shoppingBasketStyle = {
-    backgroundColor: "black",
-    color: "white",
-    fontSize: "30px",
-    display: "flex",
-    justifyContent: "center",
-    padding: "10px 0 10px 0"
-}
+// const shoppingBasketStyle = {
+//     backgroundColor: "black",
+//     color: "white",
+//     fontSize: "30px",
+//     display: "flex",
+//     justifyContent: "center",
+//     padding: "10px 0 10px 0"
+// }
 
-const basketItems = {
-    height: "63vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-evenly"
-}
+// const basketItems = {
+//     height: "63vh",
+//     display: "flex",
+//     flexDirection: "column",
+//     justifyContent: "space-evenly"
+// }
 
-const basketItemOne = {
-    backgroundColor: "grey",
-    borderTop: "1px solid black",
-    borderBottom: "1px solid black",
-    height: "20vh"
-}
+// const basketItemOne = {
+//     backgroundColor: "grey",
+//     borderTop: "1px solid black",
+//     borderBottom: "1px solid black",
+//     height: "20vh"
+// }
 
-const basketItemTwo = {
-    backgroundColor: "grey",
-    borderTop: "1px solid black",
-    borderBottom: "1px solid black",
-    height: "20vh"
-}
+// const basketItemTwo = {
+//     backgroundColor: "grey",
+//     borderTop: "1px solid black",
+//     borderBottom: "1px solid black",
+//     height: "20vh"
+// }
 
-const basketItemThree = {
-    backgroundColor: "grey",
-    borderTop: "1px solid black",
-    borderBottom: "1px solid black",
-    height: "20vh"
-}
+// const basketItemThree = {
+//     backgroundColor: "grey",
+//     borderTop: "1px solid black",
+//     borderBottom: "1px solid black",
+//     height: "20vh"
+// }
 
-const totalPrice = {
-    margin: "0",
-    backgroundColor: "grey",
-    height: "19vh",
-    borderTop: "5px solid black"
-}
+// const totalPrice = {
+//     margin: "0",
+//     backgroundColor: "grey",
+//     height: "19vh",
+//     borderTop: "5px solid black"
+// }
 
-const checkoutButton = {
-    height: "40px",
-    width: "200px",
-    fontSize: "20px",
-    backgroundColor: "black",
-    color: "white",
-    border: "none",
-    marginTop: "10px"
-}
+// const checkoutButton = {
+//     height: "40px",
+//     width: "200px",
+//     fontSize: "20px",
+//     backgroundColor: "black",
+//     color: "white",
+//     border: "none",
+//     marginTop: "10px"
+// }
 
-const totalItems = {
-    display: "flex",
-    justifyContent: "center",
-    backgroundColor: "black",
-    color: "white",
-    height: "9.7vh"
-}
+// const totalItems = {
+//     display: "flex",
+//     justifyContent: "center",
+//     backgroundColor: "black",
+//     color: "white",
+//     height: "9.7vh"
+// }
 
-const basketCatsStyle = {
-    height: "400px",
-    backgroundColor: "red"
-}
+// const basketCatsStyle = {
+//     height: "400px",
+//     backgroundColor: "red"
+// }
 
 export default BasketList
