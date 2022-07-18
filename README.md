@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# Cats4Lyf - simple react app to simulate a shopping basket
+
+It consumes [The Cat API - Cats as a Service](https://thecatapi.com/) by getting 10 items from it. 
+
+The app displays the downloaded cat information in 'cards' with the cat images and individual information about them, then the user can then select the cats it wants to buy, at wich point the cat is added to a shopping basket.
+
+## Getting Started with Create React App
+
+<details>
+<summary>Click here for details.</summary>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +77,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</details>
